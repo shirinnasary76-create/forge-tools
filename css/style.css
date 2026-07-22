@@ -1,0 +1,742 @@
+/* ========================================
+   FORGE TOOLS
+   GLOBAL RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --forge-black: #111111;
+    --forge-dark: #181818;
+    --forge-dark-2: #222222;
+    --forge-yellow: #f5b800;
+    --forge-yellow-hover: #ffc928;
+    --forge-white: #ffffff;
+    --forge-light: #f5f5f5;
+    --forge-gray: #777777;
+    --forge-border: #e5e5e5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--forge-black);
+    background: var(--forge-white);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1400px, calc(100% - 60px));
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.top-bar {
+    background: var(--forge-black);
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.top-bar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.top-bar-left,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.top-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.top-icon {
+    color: var(--forge-yellow);
+    font-weight: 800;
+}
+
+.top-bar a {
+    transition: color 0.25s ease;
+}
+
+.top-bar a:hover {
+    color: var(--forge-yellow);
+}
+
+.top-divider {
+    color: #555555;
+}
+
+
+/* ========================================
+   MAIN HEADER
+======================================== */
+
+.main-header {
+    background: var(--forge-white);
+    border-bottom: 1px solid var(--forge-border);
+    position: relative;
+    z-index: 1000;
+}
+
+.header-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    background: var(--forge-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-symbol {
+    color: var(--forge-yellow);
+    font-size: 25px;
+    font-weight: 900;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-line {
+    width: 60px;
+    height: 6px;
+    background: var(--forge-yellow);
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-text strong {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--forge-gray);
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.header-search {
+    flex: 1;
+    max-width: 650px;
+}
+
+.header-search form {
+    height: 48px;
+    display: flex;
+    background: var(--forge-light);
+    border: 1px solid #dddddd;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.header-search form:focus-within {
+    border-color: var(--forge-yellow);
+    box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.12);
+}
+
+.header-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 18px;
+    font-size: 13px;
+    color: var(--forge-black);
+}
+
+.header-search input::placeholder {
+    color: #888888;
+}
+
+.header-search button {
+    width: 58px;
+    border: none;
+    background: var(--forge-yellow);
+    transition: background 0.25s ease;
+}
+
+.header-search button:hover {
+    background: var(--forge-yellow-hover);
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+
+/* ========================================
+   HEADER ACTIONS
+======================================== */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.header-action {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    position: relative;
+}
+
+.action-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.action-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.action-text small {
+    font-size: 10px;
+    color: var(--forge-gray);
+}
+
+.action-text strong {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.header-action:hover .action-icon {
+    color: var(--forge-yellow);
+}
+
+.cart-action {
+    padding-right: 5px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -9px;
+    left: 15px;
+    width: 17px;
+    height: 17px;
+    background: var(--forge-yellow);
+    color: var(--forge-black);
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.main-navigation {
+    background: var(--forge-dark);
+    color: var(--forge-white);
+    position: relative;
+    z-index: 900;
+}
+
+.nav-inner {
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ========================================
+   CATEGORIES BUTTON
+======================================== */
+
+.categories-button {
+    height: 54px;
+    min-width: 205px;
+    border: none;
+    background: var(--forge-yellow);
+    color: var(--forge-black);
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: background 0.25s ease;
+}
+
+.categories-button:hover {
+    background: var(--forge-yellow-hover);
+}
+
+.menu-icon {
+    font-size: 18px;
+}
+
+.arrow {
+    margin-left: auto;
+}
+
+
+/* ========================================
+   MAIN MENU
+======================================== */
+
+.main-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    margin-left: 20px;
+}
+
+.main-menu > li {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.main-menu > li > a {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 0 17px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.25s ease,
+                background 0.25s ease;
+}
+
+.main-menu > li > a:hover,
+.main-menu > li > a.active {
+    color: var(--forge-yellow);
+}
+
+.dropdown-arrow {
+    margin-left: 7px;
+    font-size: 10px;
+}
+
+
+/* ========================================
+   DROPDOWN MENU
+======================================== */
+
+.dropdown-menu {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    min-width: 230px;
+    background: var(--forge-white);
+    color: var(--forge-black);
+    border-top: 3px solid var(--forge-yellow);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 11px 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--forge-light);
+    color: var(--forge-yellow);
+}
+
+
+/* ========================================
+   SALE LINK
+======================================== */
+
+.sale-link {
+    color: var(--forge-yellow) !important;
+    font-weight: 800 !important;
+}
+
+
+/* ========================================
+   MEGA MENU
+======================================== */
+
+.mega-menu {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    background: var(--forge-white);
+    color: var(--forge-black);
+    border-top: 1px solid #dddddd;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    padding: 35px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+}
+
+.main-navigation:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr)
+        1.4fr;
+    gap: 35px;
+}
+
+.mega-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-column h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--forge-yellow);
+}
+
+.mega-column a {
+    font-size: 12px;
+    color: #666666;
+    padding: 6px 0;
+    transition: color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.mega-column a:hover {
+    color: var(--forge-black);
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   MEGA FEATURED
+======================================== */
+
+.mega-featured {
+    background: var(--forge-black);
+    color: var(--forge-white);
+    padding: 30px;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-label {
+    color: var(--forge-yellow);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.mega-featured h2 {
+    font-size: 26px;
+    line-height: 1.1;
+    margin: 12px 0;
+}
+
+.mega-featured p {
+    color: #bbbbbb;
+    font-size: 12px;
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+.featured-button {
+    width: fit-content;
+    padding: 10px 18px;
+    background: var(--forge-yellow);
+    color: var(--forge-black);
+    font-size: 11px;
+    font-weight: 800;
+    transition: background 0.2s ease;
+}
+
+.featured-button:hover {
+    background: var(--forge-yellow-hover);
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.mobile-menu-button {
+    display: none;
+    margin-left: auto;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: var(--forge-yellow);
+    color: var(--forge-black);
+    font-size: 22px;
+}
+
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+.mobile-navigation {
+    display: none;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .container {
+        width: min(100% - 40px, 1400px);
+    }
+
+    .header-inner {
+        gap: 20px;
+    }
+
+    .header-actions {
+        gap: 15px;
+    }
+
+    .action-text {
+        display: none;
+    }
+
+    .main-menu > li > a {
+        padding: 0 11px;
+    }
+
+}
+
+
+@media (max-width: 1000px) {
+
+    .header-search {
+        max-width: none;
+    }
+
+    .main-menu {
+        display: none;
+    }
+
+    .categories-button {
+        min-width: 180px;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .mega-menu {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .top-bar {
+        display: none;
+    }
+
+    .header-inner {
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+    }
+
+    .brand-logo {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .header-search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .header-search form {
+        height: 44px;
+    }
+
+    .main-navigation {
+        display: none;
+    }
+
+    .logo-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text strong {
+        font-size: 17px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+    }
+
+    .header-action {
+        gap: 0;
+    }
+
+    .action-icon {
+        font-size: 20px;
+    }
+
+    .mobile-navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(320px, 85%);
+        height: 100vh;
+        background: var(--forge-black);
+        color: var(--forge-white);
+        z-index: 9999;
+        padding: 80px 25px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-navigation.active {
+        transform: translateX(0);
+    }
+
+    .mobile-navigation a {
+        padding: 16px 0;
+        border-bottom: 1px solid #333333;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .mobile-navigation a:hover {
+        color: var(--forge-yellow);
+    }
+
+    .mobile-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: var(--forge-yellow);
+        color: var(--forge-black);
+        font-size: 25px;
+    }
+
+}

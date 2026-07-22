@@ -1,0 +1,204 @@
+<!-- ========================================
+     HERO SLIDER
+======================================== -->
+
+<section class="hero-slider" id="heroSlider">
+
+    <!-- SLIDE 01 -->
+
+    <article class="hero-slide active">
+
+        <div class="hero-background">
+
+            <img
+                src="images/hero/power-tools.jpg"
+                alt="Professional Power Tools"
+            >
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <span class="hero-eyebrow">
+                PROFESSIONAL GRADE TOOLS
+            </span>
+
+            <h1>
+                POWER<br>
+                YOUR WORK.
+            </h1>
+
+            <p>
+                Professional tools engineered for
+                demanding jobs and serious results.
+            </p>
+
+            <a
+                href="shop.html"
+                class="hero-button"
+            >
+                EXPLORE POWER TOOLS
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="hero-slide-number">
+            <span>01</span>
+            <div class="hero-progress"></div>
+            <span>03</span>
+        </div>
+
+    </article>
+
+
+    <!-- SLIDE 02 -->
+
+    <article class="hero-slide">
+
+        <div class="hero-background">
+
+            <img
+                src="images/hero/industrial-machinery.jpg"
+                alt="Industrial Machinery"
+            >
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <span class="hero-eyebrow">
+                INDUSTRIAL SOLUTIONS
+            </span>
+
+            <h1>
+                INDUSTRIAL<br>
+                POWER.
+            </h1>
+
+            <p>
+                Reliable machinery and equipment
+                built for modern industrial operations.
+            </p>
+
+            <a
+                href="machinery.html"
+                class="hero-button"
+            >
+                VIEW MACHINERY
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="hero-slide-number">
+            <span>02</span>
+            <div class="hero-progress"></div>
+            <span>03</span>
+        </div>
+
+    </article>
+
+
+    <!-- SLIDE 03 -->
+
+    <article class="hero-slide">
+
+        <div class="hero-background">
+
+            <img
+                src="images/hero/installation-service.jpg"
+                alt="Professional Installation Service"
+            >
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <span class="hero-eyebrow">
+                EXPERT TECHNICAL SERVICE
+            </span>
+
+            <h1>
+                FROM INSTALLATION<br>
+                TO OPERATION.
+            </h1>
+
+            <p>
+                Expert installation, commissioning
+                and technical support for your equipment.
+            </p>
+
+            <a
+                href="services.html"
+                class="hero-button"
+            >
+                OUR SERVICES
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="hero-slide-number">
+            <span>03</span>
+            <div class="hero-progress"></div>
+            <span>03</span>
+        </div>
+
+    </article>
+
+
+    <!-- SLIDER CONTROLS -->
+
+    <div class="hero-controls">
+
+        <button
+            class="hero-arrow hero-prev"
+            type="button"
+            aria-label="Previous slide"
+        >
+            ←
+        </button>
+
+        <div class="hero-dots">
+
+            <button
+                class="hero-dot active"
+                data-slide="0"
+                type="button"
+                aria-label="Go to slide 1"
+            ></button>
+
+            <button
+                class="hero-dot"
+                data-slide="1"
+                type="button"
+                aria-label="Go to slide 2"
+            ></button>
+
+            <button
+                class="hero-dot"
+                data-slide="2"
+                type="button"
+                aria-label="Go to slide 3"
+            ></button>
+
+        </div>
+
+        <button
+            class="hero-arrow hero-next"
+            type="button"
+            aria-label="Next slide"
+        >
+            →
+        </button>
+
+    </div>
+
+</section>

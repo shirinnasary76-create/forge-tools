@@ -277,3 +277,384 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* ========================================
+   FORGE TOOLS
+   HERO SLIDER
+======================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const heroSlider =
+        document.getElementById("heroSlider");
+
+    if (!heroSlider) {
+        return;
+    }
+
+
+    /* ========================================
+       ELEMENTS
+    ======================================== */
+
+    const slides =
+        heroSlider.querySelectorAll(
+            ".hero-slide"
+        );
+
+    const dots =
+        heroSlider.querySelectorAll(
+            ".hero-dot"
+        );
+
+    const nextButton =
+        heroSlider.querySelector(
+            ".hero-next"
+        );
+
+    const prevButton =
+        heroSlider.querySelector(
+            ".hero-prev"
+        );
+
+
+    /* ========================================
+       SETTINGS
+    ======================================== */
+
+    let currentSlide = 0;
+
+    let autoPlay;
+
+    const slideDuration = 5000;
+
+
+    /* ========================================
+       SHOW SLIDE
+    ======================================== */
+
+    function showSlide(index) {
+
+        if (index >= slides.length) {
+            currentSlide = 0;
+        }
+
+        else if (index < 0) {
+            currentSlide =
+                slides.length - 1;
+        }
+
+        else {
+            currentSlide = index;
+        }
+
+
+        /* Remove active state */
+
+        slides.forEach(
+            function (slide) {
+
+                slide.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        dots.forEach(
+            function (dot) {
+
+                dot.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        /* Add active state */
+
+        slides[currentSlide]
+            .classList.add(
+                "active"
+            );
+
+
+        if (dots[currentSlide]) {
+
+            dots[currentSlide]
+                .classList.add(
+                    "active"
+                );
+
+        }
+
+    }
+
+
+    /* ========================================
+       NEXT SLIDE
+    ======================================== */
+
+    function nextSlide() {
+
+        showSlide(
+            currentSlide + 1
+        );
+
+    }
+
+
+    /* ========================================
+       PREVIOUS SLIDE
+    ======================================== */
+
+    function previousSlide() {
+
+        showSlide(
+            currentSlide - 1
+        );
+
+    }
+
+
+    /* ========================================
+       AUTO PLAY
+    ======================================== */
+
+    function startAutoPlay() {
+
+        stopAutoPlay();
+
+        autoPlay =
+            setInterval(
+                function () {
+
+                    nextSlide();
+
+                },
+                slideDuration
+            );
+
+    }
+
+
+    function stopAutoPlay() {
+
+        if (autoPlay) {
+
+            clearInterval(
+                autoPlay
+            );
+
+        }
+
+    }
+
+
+    /* ========================================
+       NEXT BUTTON
+    ======================================== */
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            function () {
+
+                nextSlide();
+
+                startAutoPlay();
+
+            }
+        );
+
+    }
+
+
+    /* ========================================
+       PREVIOUS BUTTON
+    ======================================== */
+
+    if (prevButton) {
+
+        prevButton.addEventListener(
+            "click",
+            function () {
+
+                previousSlide();
+
+                startAutoPlay();
+
+            }
+        );
+
+    }
+
+
+    /* ========================================
+       DOT NAVIGATION
+    ======================================== */
+
+    dots.forEach(
+        function (dot, index) {
+
+            dot.addEventListener(
+                "click",
+                function () {
+
+                    showSlide(index);
+
+                    startAutoPlay();
+
+                }
+            );
+
+        }
+    );
+
+
+    /* ========================================
+       PAUSE ON HOVER
+    ======================================== */
+
+    heroSlider.addEventListener(
+        "mouseenter",
+        function () {
+
+            stopAutoPlay();
+
+        }
+    );
+
+
+    heroSlider.addEventListener(
+        "mouseleave",
+        function () {
+
+            startAutoPlay();
+
+        }
+    );
+
+
+    /* ========================================
+       KEYBOARD NAVIGATION
+    ======================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "ArrowRight"
+            ) {
+
+                nextSlide();
+
+                startAutoPlay();
+
+            }
+
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
+
+                previousSlide();
+
+                startAutoPlay();
+
+            }
+
+        }
+    );
+
+
+    /* ========================================
+       TOUCH SWIPE
+    ======================================== */
+
+    let touchStartX = 0;
+
+    let touchEndX = 0;
+
+
+    heroSlider.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStartX =
+                event.changedTouches[0]
+                    .screenX;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    heroSlider.addEventListener(
+        "touchend",
+        function (event) {
+
+            touchEndX =
+                event.changedTouches[0]
+                    .screenX;
+
+            handleSwipe();
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    function handleSwipe() {
+
+        const swipeDistance =
+            touchEndX -
+            touchStartX;
+
+
+        if (
+            Math.abs(swipeDistance)
+            < 50
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            swipeDistance < 0
+        ) {
+
+            nextSlide();
+
+        }
+
+        else {
+
+            previousSlide();
+
+        }
+
+
+        startAutoPlay();
+
+    }
+
+
+    /* ========================================
+       INITIALIZE SLIDER
+    ======================================== */
+
+    showSlide(0);
+
+    startAutoPlay();
+
+});

@@ -202,4 +202,232 @@
     </div>
 
 </section>
+<!-- ========================================
+     QUICK CATEGORIES
+======================================== -->
 
+<section class="quick-categories">
+
+    <div class="container">
+
+        <div class="quick-categories-header">
+
+            <div>
+                <span class="section-eyebrow">
+                    SHOP BY CATEGORY
+                </span>
+
+                <h2>
+                    FIND THE RIGHT
+                    <strong>TOOLS.</strong>
+                </h2>
+            </div>
+
+            <a href="shop.html" class="view-all-link">
+                VIEW ALL PRODUCTS
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+            <!-- POWER TOOLS -->
+
+            <a href="power-tools.html"
+               class="category-card">
+
+                <div class="category-card-image">
+
+                    <img
+                        src="images/categories/power-tools.jpg"
+                        alt="Power Tools"
+                    >
+
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        01
+                    </span>
+
+                    <h3>
+                        POWER TOOLS
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- HAND TOOLS -->
+
+            <a href="hand-tools.html"
+               class="category-card">
+
+                <div class="category-card-image">
+
+                    <img
+                        src="images/categories/hand-tools.jpg"
+                        alt="Hand Tools"
+                    >
+
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        02
+                    </span>
+
+                    <h3>
+                        HAND TOOLS
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- MACHINERY -->
+
+            <a href="machinery.html"
+               class="category-card">
+
+                <div class="category-card-image">
+
+                    <img
+                        src="images/categories/machinery.jpg"
+                        alt="Industrial Machinery"
+                    >
+
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        03
+                    </span>
+
+                    <h3>
+                        MACHINERY
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- WELDING -->
+
+            <a href="welding.html"
+               class="category-card">
+
+                <div class="category-card-image">
+
+                    <img
+                        src="images/categories/welding.jpg"
+                        alt="Welding Equipment"
+                    >
+
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        04
+                    </span>
+
+                    <h3>
+                        WELDING
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- SAFETY -->
+
+            <a href="safety-equipment.html"
+               class="category-card">
+
+                <div class="category-card-image">
+
+                    <img
+                        src="images/categories/safety.jpg"
+                        alt="Safety Equipment"
+                    >
+
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        05
+                    </span>
+
+                    <h3>
+                        SAFETY EQUIPMENT
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- SERVICES -->
+
+            <a href="services.html"
+               class="category-card category-service">
+
+                <div class="category-service-icon">
+                    ⚙
+                </div>
+
+                <div class="category-card-content">
+
+                    <span class="category-number">
+                        06
+                    </span>
+
+                    <h3>
+                        INSTALLATION
+                        SERVICES
+                    </h3>
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
